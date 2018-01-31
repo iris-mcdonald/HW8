@@ -1,0 +1,21 @@
+﻿input[type=text] {
+    width: 33.0%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    color: white;
+    display: inline;
+}
+#form {
+    
+}
+.one {
+    background-color: red;
+}
+.two {
+    background-color: yellow;
+}
+.three {
+    background-color: green;
+}
