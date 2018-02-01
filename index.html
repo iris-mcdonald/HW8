@@ -26,10 +26,10 @@
     <script>
         function chgBoxColor()
         {
-            var result = 4;
-            var boxId = "one";
-
-            while ((result == 0) || (result > 3)) {
+            document.write("start chgBoxColor: ");
+            var result = 0;
+            var boxId = 'one';
+            while ((result == 0) || (result > 3)) {//run for each box
                 var result = myRandomNumber();
             }
             document.write("start the switch-result = " + result);
@@ -60,7 +60,17 @@
             return result;
         }
 
-        chgBoxColor();//run chgBoxColor function
+        function startProcess()
+        {
+            for (var i = 1; i <= 10; i++)//run change box color function 10X
+            {
+                chgBoxColor();
+            }
+        }
+
+        startProcess();
+
+        
 
     </script>
 
