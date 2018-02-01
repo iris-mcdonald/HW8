@@ -26,25 +26,23 @@
     <script>
         function chgBoxColor()
         {
-            document.write("start chgBoxColor: " + '<br>');
             var result = 0;
             while ((result == 0) || (result > 3)) {//run for each box
                 var result = myRandomNumber();
             }
-            /*document.write("start the switch-result = " + result);*/
-
+            
             switch (result)
             {
                 case 1:
-                    document.write('Case One: ' + result);
+                    /*document.write('Case One: ' + result);*/
                     document.getElementById(boxId).className = "stop";//set box color to red
                     break;
                 case 2:
-                    document.write('Case Two: ' + result);
+                    /*document.write('Case Two: ' + result);*/
                     document.getElementById(boxId).className = "caution";//set box color to yellow
                     break;
                 case 3:
-                    document.write('Case Three: ' + result);//set box color to green
+                    /*document.write('Case Three: ' + result);//set box color to green*/
                     document.getElementById(boxId).className = "go";
                     break;
                 default:
@@ -71,13 +69,19 @@
                 } else {
                     boxId = "three";
                 }
-                /*document.write(" before chgBoxColor loop: " + "boxId: " + boxId + '<br>' + i + "=i ");*/
+                
                 for ( var i = 1; i <= 10; i++)//run change box color function 10X for each text box
                 {
                     chgBoxColor();
-                    /*document.write("<br>" + "end of chgBoxColor " + i);*/
-                }
+                } 
             }
+
+           /*If ((document.getElementById("one").className == document.getElementById("two").className) &&
+                (document.getElementById("two").className == document.getElementById("three").className)) {
+                     document.getElementById("msg").innerHTML = "Congratulations, you won!";
+            } else {
+                document.getElementById("msg").innerHTML = "Sorry, try again!";
+            }*/
         }
 
         startProcess();
