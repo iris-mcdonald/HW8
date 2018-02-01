@@ -14,7 +14,7 @@
     <div class="boxes">
         <form>
             <input id="one" class="stop" type="text" name="box1" />
-            <input id="two " class="caution" type="text" name="box2" />
+            <input id="two" class="caution" type="text" name="box2" />
             <input id="three" class="go" type="text" name="box3" />
         </form>
         <p id="msg">"Winner or Loser?"</p>
@@ -26,15 +26,15 @@
     <script>
         function chgBoxColor()
         {
-            document.write("start chgBoxColor: ");
+            document.write("start chgBoxColor: " + '<br>');
             var result = 0;
-            var boxId = 'one';
             while ((result == 0) || (result > 3)) {//run for each box
                 var result = myRandomNumber();
             }
-            document.write("start the switch-result = " + result);
+            /*document.write("start the switch-result = " + result);*/
 
-            switch (result) {
+            switch (result)
+            {
                 case 1:
                     document.write('Case One: ' + result);
                     document.getElementById(boxId).className = "stop";//set box color to red
@@ -44,9 +44,8 @@
                     document.getElementById(boxId).className = "caution";//set box color to yellow
                     break;
                 case 3:
-                    document.write('Case Three: ' + result);//add set class color to green
+                    document.write('Case Three: ' + result);//set box color to green
                     document.getElementById(boxId).className = "go";
-                    document.write('Value of class: ' + document.getElementById(boxId).className);
                     break;
                 default:
                     document.write('Case Not One, Two, or Three ' + result);//no color set
@@ -54,23 +53,36 @@
             }
         }
 
-        function myRandomNumber() {
+        function myRandomNumber()
+        {
             var result = Math.floor((Math.random() * 10) + 1);
-            document.write("random generator: " + result);
+            /*document.write("random generator: " + result);*/
             return result;
         }
 
         function startProcess()
         {
-            for (var i = 1; i <= 10; i++)//run change box color function 10X
+            for (var box = 1; box <= 3; box++)//process the three text boxes
             {
-                chgBoxColor();
+                if (box == 1) {
+                    boxId = "one";
+                } else if (box == 2) {
+                    boxId = "two";
+                } else {
+                    boxId = "three";
+                }
+                /*document.write(" before chgBoxColor loop: " + "boxId: " + boxId + '<br>' + i + "=i ");*/
+                for ( var i = 1; i <= 10; i++)//run change box color function 10X for each text box
+                {
+                    chgBoxColor();
+                    /*document.write("<br>" + "end of chgBoxColor " + i);*/
+                }
             }
         }
 
         startProcess();
 
-        
+     
 
     </script>
 
