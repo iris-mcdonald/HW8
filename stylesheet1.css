@@ -10,12 +10,12 @@
 #form {
     
 }
-.one {
+.stop {
     background-color: red;
 }
-.two {
+.caution {
     background-color: yellow;
 }
-.three {
+.go {
     background-color: green;
 }
