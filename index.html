@@ -17,7 +17,7 @@
             <input id="two" class="caution" type="text" name="box2" />
             <input id="three" class="go" type="text" name="box3" />
         </form>
-        <p id="msg">"Winner or Loser?"</p>
+        <h2 id="msg">"Winner or Loser?"</h2>
     </div>
     <!-- External Script to random generate numbers
             <script src="Script1.js"></script>
@@ -74,15 +74,18 @@
                 {
                     chgBoxColor();
                 } 
-            }
+            }//end of process text box loop
 
-           /*If ((document.getElementById("one").className == document.getElementById("two").className) &&
-                (document.getElementById("two").className == document.getElementById("three").className)) {
-                     document.getElementById("msg").innerHTML = "Congratulations, you won!";
+            var box1Color = document.getElementById("one").className;
+            var box2Color = document.getElementById("two").className;
+            var box3Color = document.getElementById("three").className;
+            if ((box1Color == box2Color) && (box2Color == box3Color)) {//Set text msg based on box color
+                 document.getElementById("msg").innerHTML = "Congratulations, you won!";
             } else {
-                document.getElementById("msg").innerHTML = "Sorry, try again!";
-            }*/
-        }
+                 document.getElementById("msg").innerHTML = "Sorry, try again!";
+            }
+          
+        }//end of startProcess
 
         startProcess();
 
