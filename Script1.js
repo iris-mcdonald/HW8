@@ -32,6 +32,18 @@
             return result;
         }
 
+        function setWinOrLoseMsg()
+        {
+            var box1Color = document.getElementById("one").className;
+            var box2Color = document.getElementById("two").className;
+            var box3Color = document.getElementById("three").className;
+            if ((box1Color == box2Color) && (box2Color == box3Color)) {//Set text msg based on box color
+                 document.getElementById("msg").innerHTML = "Congratulations, you won!";
+            } else {
+                 document.getElementById("msg").innerHTML = "Sorry, try again!";
+            }   
+        }
+
         function startProcess()
         {
             for (var box = 1; box <= 3; box++)//process the three text boxes
@@ -50,15 +62,8 @@
                 } 
             }//end of process text box loop
 
-            var box1Color = document.getElementById("one").className;
-            var box2Color = document.getElementById("two").className;
-            var box3Color = document.getElementById("three").className;
-            if ((box1Color == box2Color) && (box2Color == box3Color)) {//Set text msg based on box color
-                 document.getElementById("msg").innerHTML = "Congratulations, you won!";
-            } else {
-                 document.getElementById("msg").innerHTML = "Sorry, try again!";
-            }
-          
+            setWinOrLoseMsg ()
+                      
         }//end of startProcess
 
         startProcess();
